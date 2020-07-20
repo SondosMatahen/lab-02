@@ -4,13 +4,14 @@ var keyArray=[];
 var animal=[];
 
 $.get('data/page-1.json').then(data =>{
-
+    
+   
     data.forEach(element => {
         let obj=new Photo(element.image_url,element.title,element.description,element.keyword,element.horns);
          obj.render();
          obj.options();
     });
-
+ 
 })
 
 function Photo (image_url, title,description,keyword,horns ) {
@@ -26,7 +27,7 @@ Photo.prototype.render=function(){
 
 let sectionclone=$('#photo-template').clone();
 
-sectionclone.removeAttr('photo-template');
+sectionclone.removeAttr('id');
 sectionclone.attr('class',this.keyword)
 $('main').append(sectionclone);
 sectionclone.find('h2').text(this.title);
@@ -35,6 +36,8 @@ sectionclone.find('p').text(this.description);
 
 
 }
+
+
 
 
 Photo.prototype.options=function(){
@@ -49,7 +52,8 @@ Photo.prototype.options=function(){
 }
 
 
-$('main :nth-child(1)').remove('body');
+
+
  $('select').change(function(){
      $('section').hide();
      var value=$(this).val();
