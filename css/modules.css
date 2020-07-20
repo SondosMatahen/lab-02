@@ -1,0 +1,16 @@
+img{
+    width: 200px;
+    height: 200px;
+    
+}
+section{
+    width: 400px;
+    height: 400px;
+    float: left;
+    border:1px rgb(141, 67, 82) solid;
+    margin: 42px;
+    text-align: center;
+}
+main :nth-child(1){
+    visibility: hidden;
+}
