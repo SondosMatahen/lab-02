@@ -1,12 +1,13 @@
 img{
+    border-radius: 5%;
     width: 200px;
     height: 200px;
     
 }
 section{
+    border-radius: 7%;
     width: 400px;
     height: 400px;
-    float: left;
     border:1px rgb(141, 67, 82) solid;
     margin: 42px;
     text-align: center;
@@ -16,4 +17,8 @@ section{
 #photo-template{
     visibility: hidden;
     display: none;
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
 }
