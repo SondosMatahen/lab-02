@@ -17,6 +17,7 @@ $.get('data/page-1.json').then(data =>{
     data.forEach(element => {
         let obj=new Photo(element.image_url,element.title,element.description,element.keyword,element.horns);
          obj.render();
+        //  $('.page').show();
          obj.options();
     });
 
@@ -31,7 +32,9 @@ $.get('data/page-2.json').then(data =>{
     data.forEach(element=>{
         let obj2=new Photo(element.image_url,element.title,element.description,element.keyword,element.horns);
       obj2.render();
+    //   obj2.render().hide();
        obj2.options();
+       
 
     })
 
@@ -64,9 +67,11 @@ Photo.prototype.render=function(){
 let template=$('#template').html();
 let section=Mustache.render(template, this );
 $('main').append(section);
+
 // section.removeAttr('id');
 // section.attr('class',this.keyword);
 $('section').addClass('page');
+
 
 
 }
@@ -99,7 +104,8 @@ $('#page2').on('click',function(){
 })
 
 page1();
-page2();
+
+
 
 
 $('.one').change(function(){
